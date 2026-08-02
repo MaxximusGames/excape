@@ -1,8 +1,8 @@
 extends Resource
 class_name WeaponAttachment
 
-@export var attachment_name: String = "Schalldämpfer"
-@export_multiline var description: String = "Ein sehr unhandlicher Schalldämpfer aus einer Coladose und einem Kissen. Macht zwar leiser und Präziser, aber dafür schießt man auch nicht so weit."
+@export var attachment_name: String = "Attachment Name"
+@export_multiline var description: String = "Beschreibung"
 @export var slot_type: String = "barrel"  # "barrel", "bolt", "body"
 @export var allowed_weapon_types: Array[String] = []  # leer = alle Waffentypen erlaubt
 @export var price_scrap: int = 50

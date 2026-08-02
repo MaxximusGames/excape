@@ -4,6 +4,9 @@
 
 [resource]
 script = ExtResource("1_s3nkh")
+attachment_name = "Schalldämpfer"
+description = "Ein sehr unhandlicher Schalldämpfer aus einer Coladose und einem Kissen gebaut. Macht zwar leiser und Präziser, aber dafür schießt man auch nicht so weit."
+slot_type = "barrel"
 spread_mult = 0.7
 volume_mult = 0.4
 range_mult = 0.85

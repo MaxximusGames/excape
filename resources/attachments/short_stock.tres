@@ -6,7 +6,8 @@
 script = ExtResource("1_jh232")
 attachment_name = "Verkürzte Schulterstütze"
 description = "Die Schulterstütze zu verkürzen, macht die Waffe leichter, aber auch weniger präzise."
-slot_type = "bolt"
+slot_type = "body"
+allowed_weapon_types = Array[String](["rifle", "mg"])
 spread_mult = 1.3
 weight_mult = 0.85
 metadata/_custom_type_script = "uid://b5kr8i0klb5ie"
