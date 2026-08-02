@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bn0kgvr1y75ml"]
+
+[ext_resource type="Script" uid="uid://rlvq6mcjpem2" path="res://scenes/items/pickup.gd" id="1_fv8d6"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4pips"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_slopk"]
+
+[node name="Area2D" type="Area2D" unique_id=186089280]
+collision_layer = 16
+script = ExtResource("1_fv8d6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=696551994]
+modulate = Color(1, 0.9812921, 0, 1)
+self_modulate = Color(1, 0.98333335, 0, 1)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_4pips")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1709726178]
+modulate = Color(1, 1, 0.09411765, 1)
+shape = SubResource("CircleShape2D_slopk")
+
+[node name="PromptLabel" type="Label" parent="." unique_id=486764592]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = -30.0
+offset_right = 110.0
+offset_bottom = -7.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+horizontal_alignment = 1
+
+[node name="LootProgressBar" type="ProgressBar" parent="." unique_id=1844045031]
+visible = false
+offset_left = -30.0
+offset_top = -45.0
+offset_right = 30.0
+offset_bottom = -18.0
+scale = Vector2(1, 0.5)

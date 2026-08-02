@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ds82hnj680oh5"]
+
+[ext_resource type="PackedScene" uid="uid://egxv8llwu6bl" path="res://scenes/projectiles/bullet.tscn" id="1_fwyd3"]
+[ext_resource type="Script" uid="uid://bdm5qh4y8tv5n" path="res://scripts/weapon_data.gd" id="2_cme0y"]
+
+[resource]
+script = ExtResource("2_cme0y")
+weapon_name = "Sniper"
+bullet_scene = ExtResource("1_fwyd3")
+fire_rate = 1.0
+damage = 50.0
+bullet_speed = 2000.0
+volume = 5500.0
+range = 4000.0
+weight = 1.4
+price_cash = 1000
+metadata/_custom_type_script = "uid://bdm5qh4y8tv5n"

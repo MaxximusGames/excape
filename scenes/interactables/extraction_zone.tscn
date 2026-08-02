@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cba1lncuxrj8e"]
+
+[ext_resource type="Script" uid="uid://xt5jxymqd723" path="res://scenes/interactables/extraction_zone.gd" id="1_tieh6"]
+[ext_resource type="Texture2D" uid="uid://qs6toqf8jk0m" path="res://assets/sprites/tile_115.png" id="1_xirn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slopk"]
+size = Vector2(96, 96)
+
+[node name="Area2D" type="Area2D" unique_id=1869518844]
+collision_layer = 32
+script = ExtResource("1_tieh6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=998341520]
+shape = SubResource("RectangleShape2D_slopk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2137229450]
+scale = Vector2(1.5017241, 1.5)
+texture = ExtResource("1_xirn8")
+
+[node name="Label" type="Label" parent="." unique_id=1956255567]
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,94 @@
+[gd_scene format=4 uid="uid://g76vsbthgli1"]
+
+[ext_resource type="Texture2D" uid="uid://daku7dw3pqtyx" path="res://assets/sprites/tile_96.png" id="1_pgqma"]
+[ext_resource type="Texture2D" uid="uid://b5vc6m6yn3cry" path="res://assets/sprites/tile_01.png" id="2_80s0l"]
+[ext_resource type="PackedScene" uid="uid://c4mlrohtxcha4" path="res://scenes/player/player.tscn" id="2_b40lw"]
+[ext_resource type="Script" uid="uid://bpu7n376s0d50" path="res://scenes/levels/waffenschrank.gd" id="2_flrac"]
+[ext_resource type="PackedScene" uid="uid://dw7ibtfdbbdgh" path="res://scenes/interactables/run_portal.tscn" id="3_el7vn"]
+[ext_resource type="PackedScene" uid="uid://dc7ibfhq6i1mt" path="res://scenes/ui/equip_ui.tscn" id="3_f2uwu"]
+[ext_resource type="Script" uid="uid://2wr407a03atj" path="res://scenes/levels/waffenshop.gd" id="3_flrac"]
+[ext_resource type="PackedScene" uid="uid://c6bhihlmnm2jl" path="res://scenes/ui/homebase_hud.tscn" id="4_2kw0q"]
+[ext_resource type="PackedScene" uid="uid://dimhrgar6diqq" path="res://scenes/ui/shop_ui.tscn" id="4_f2uwu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b40lw"]
+texture = ExtResource("1_pgqma")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_slopk"]
+sources/0 = SubResource("TileSetAtlasSource_b40lw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slopk"]
+size = Vector2(104, 50)
+
+[node name="Node2D" type="Node2D" unique_id=249709702]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=428142029]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAABAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAUAAAAAAAAAAAANAAEAAAAAAAAAAAARAAEAAAAAAAAAAAANAAUAAAAAAAAAAAARAAUAAAAAAAAAAAABAAkAAAAAAAAAAAABAA0AAAAAAAAAAAABABEAAAAAAAAAAAABABUAAAAAAAAAAAABABkAAAAAAAAAAAAVAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAlAAEAAAAAAAAAAAApAAEAAAAAAAAAAAAtAAEAAAAAAAAAAAAxAAEAAAAAAAAAAAAFABkAAAAAAAAAAAAJABkAAAAAAAAAAAANABkAAAAAAAAAAAARABkAAAAAAAAAAAAVABkAAAAAAAAAAAAZABkAAAAAAAAAAAAdABkAAAAAAAAAAAAhABkAAAAAAAAAAAAlABkAAAAAAAAAAAApABkAAAAAAAAAAAAtABkAAAAAAAAAAAAxABkAAAAAAAAAAAAxAAUAAAAAAAAAAAAxAAkAAAAAAAAAAAAxAA0AAAAAAAAAAAAxABEAAAAAAAAAAAAxABUAAAAAAAAAAAAtABUAAAAAAAAAAAAtABEAAAAAAAAAAAAtAA0AAAAAAAAAAAAtAAkAAAAAAAAAAAAtAAUAAAAAAAAAAAApAAUAAAAAAAAAAAApAAkAAAAAAAAAAAApAA0AAAAAAAAAAAApABEAAAAAAAAAAAApABUAAAAAAAAAAAAlABUAAAAAAAAAAAAlABEAAAAAAAAAAAAlAA0AAAAAAAAAAAAlAAkAAAAAAAAAAAAlAAUAAAAAAAAAAAAhAAUAAAAAAAAAAAAdAAUAAAAAAAAAAAAZAAUAAAAAAAAAAAAVAAUAAAAAAAAAAAAhAAkAAAAAAAAAAAAhAA0AAAAAAAAAAAAhABEAAAAAAAAAAAAhABUAAAAAAAAAAAAdABUAAAAAAAAAAAAdABEAAAAAAAAAAAAdAA0AAAAAAAAAAAAdAAkAAAAAAAAAAAAZAAkAAAAAAAAAAAAZAA0AAAAAAAAAAAAZABEAAAAAAAAAAAAZABUAAAAAAAAAAAAVABUAAAAAAAAAAAAVABEAAAAAAAAAAAAVAA0AAAAAAAAAAAAVAAkAAAAAAAAAAAARAAkAAAAAAAAAAAARAA0AAAAAAAAAAAARABEAAAAAAAAAAAARABUAAAAAAAAAAAANABUAAAAAAAAAAAANABEAAAAAAAAAAAANAA0AAAAAAAAAAAANAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAFAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAFABEAAAAAAAAAAAAJABEAAAAAAAAAAAAFABUAAAAAAAAAAAAJABUAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_slopk")
+
+[node name="ausruesung" type="Area2D" parent="." unique_id=1207467824]
+position = Vector2(554, 99)
+collision_layer = 64
+script = ExtResource("2_flrac")
+equip_ui_scene = ExtResource("3_f2uwu")
+
+[node name="Tile01" type="Sprite2D" parent="ausruesung" unique_id=1872340541]
+texture = ExtResource("2_80s0l")
+
+[node name="Label" type="Label" parent="ausruesung/Tile01" unique_id=496966290]
+offset_left = -43.0
+offset_top = -57.0
+offset_right = 74.0
+offset_bottom = -34.0
+text = "Ausrüstung"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ausruesung" unique_id=897037857]
+position = Vector2(2, -10)
+scale = Vector2(1, 1.96)
+shape = SubResource("RectangleShape2D_slopk")
+
+[node name="waffenshop" type="Area2D" parent="." unique_id=1339141571]
+position = Vector2(400, 99)
+collision_layer = 64
+script = ExtResource("3_flrac")
+shop_ui_scene = ExtResource("4_f2uwu")
+
+[node name="Tile01" type="Sprite2D" parent="waffenshop" unique_id=496235643]
+texture = ExtResource("2_80s0l")
+
+[node name="Label" type="Label" parent="waffenshop/Tile01" unique_id=1185293254]
+offset_left = -20.0
+offset_top = -57.0
+offset_right = 97.0
+offset_bottom = -34.0
+text = "Shop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="waffenshop" unique_id=374817495]
+position = Vector2(2, -10)
+scale = Vector2(1, 1.96)
+shape = SubResource("RectangleShape2D_slopk")
+
+[node name="CharacterBody2D" parent="." unique_id=1529227868 instance=ExtResource("2_b40lw")]
+position = Vector2(400, 222)
+
+[node name="Area2D" parent="." unique_id=2021348773 instance=ExtResource("3_el7vn")]
+position = Vector2(771, 220)
+rotation = -1.5707964
+
+[node name="HomebaseHud" parent="." unique_id=1482921320 instance=ExtResource("4_2kw0q")]

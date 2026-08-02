@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dw7ibtfdbbdgh"]
+
+[ext_resource type="Script" uid="uid://tk33ugillmuy" path="res://scenes/interactables/run_portal.gd" id="1_x2413"]
+[ext_resource type="Texture2D" uid="uid://8314f2hsefrb" path="res://assets/sprites/tile_536.png" id="2_5seh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv0xs"]
+size = Vector2(8.702532, 27.319582)
+
+[node name="Area2D" type="Area2D" unique_id=2021348773]
+collision_layer = 64
+script = ExtResource("1_x2413")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2141816459]
+texture = ExtResource("2_5seh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=221957489]
+position = Vector2(0.4999981, -24.999996)
+scale = Vector2(6.3199997, 3.8800006)
+shape = SubResource("RectangleShape2D_cv0xs")
+
+[node name="Label" type="Label" parent="." unique_id=783535140]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=676770259]
+offset_right = 4.0
+offset_bottom = 27.0

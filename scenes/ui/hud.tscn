@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c58mw2slh77oj"]
+
+[ext_resource type="Script" uid="uid://04w8bxov6gta" path="res://scenes/ui/hud.gd" id="1_0mwgc"]
+
+[sub_resource type="Theme" id="Theme_org1n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqnrr"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mwgc"]
+bg_color = Color(0.93404996, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_0mwgc"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=732611360]
+script = ExtResource("1_0mwgc")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=867388411]
+modulate = Color(0.8024569, 0.33361515, 0.050708726, 1)
+z_index = 11
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = -54.0
+offset_right = 256.0
+offset_bottom = -27.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = SubResource("Theme_org1n")
+theme_override_styles/background = SubResource("StyleBoxFlat_hqnrr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0mwgc")
+step = 1.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="." unique_id=1877915137]
+z_index = 12
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -51.0
+offset_right = 100.0
+offset_bottom = -28.0
+grow_vertical = 0
+theme = SubResource("Theme_0mwgc")
+theme_override_colors/font_color = Color(0, 0.22889857, 0.7827901, 1)
+text = "100 / 100"
+
+[node name="ScrapLabel" type="Label" parent="." unique_id=111331821]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 139.0
+offset_bottom = 73.0
+text = "Scrap: 1000"
+
+[node name="CashLabel" type="Label" parent="." unique_id=1953836335]
+offset_left = 50.0
+offset_top = 70.0
+offset_right = 133.0
+offset_bottom = 93.0
+text = "Cash: 1000"
+
+[node name="TimerLabel" type="Label" parent="." unique_id=388641111]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.5
+offset_top = 50.0
+offset_right = 41.5
+offset_bottom = 73.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+text = "Zeit: 1000s"

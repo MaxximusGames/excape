@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dimhrgar6diqq"]
+
+[ext_resource type="Script" uid="uid://cq2of72go84gy" path="res://scenes/ui/shop_ui.gd" id="1_ygcrn"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1411917677]
+visible = false
+script = ExtResource("1_ygcrn")
+
+[node name="Panel" type="Panel" parent="." unique_id=247014847]
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 450.0
+offset_bottom = 400.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1047817935]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

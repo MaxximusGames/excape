@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://b31f3lltlsxj1"]
+
+[ext_resource type="PackedScene" uid="uid://egxv8llwu6bl" path="res://scenes/projectiles/bullet.tscn" id="1_jo37v"]
+[ext_resource type="Script" uid="uid://bdm5qh4y8tv5n" path="res://scripts/weapon_data.gd" id="2_cavq1"]
+
+[resource]
+script = ExtResource("2_cavq1")
+weapon_name = "MP5"
+bullet_scene = ExtResource("1_jo37v")
+fire_rate = 0.1
+spread = 20.0
+volume = 800.0
+range = 900.0
+weight = 0.9
+price_cash = 100
+metadata/_custom_type_script = "uid://bdm5qh4y8tv5n"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://d3tjgutjig8ji"]
+
+[ext_resource type="PackedScene" uid="uid://egxv8llwu6bl" path="res://scenes/projectiles/bullet.tscn" id="1_7uohj"]
+[ext_resource type="Script" uid="uid://bdm5qh4y8tv5n" path="res://scripts/weapon_data.gd" id="2_e4ulk"]
+
+[resource]
+script = ExtResource("2_e4ulk")
+weapon_name = "MG42"
+bullet_scene = ExtResource("1_7uohj")
+fire_rate = 0.1
+damage = 20.0
+bullet_speed = 1200.0
+spread = 15.0
+volume = 1000.0
+range = 1500.0
+weight = 1.3
+price_cash = 500
+metadata/_custom_type_script = "uid://bdm5qh4y8tv5n"
