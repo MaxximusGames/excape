@@ -6,8 +6,7 @@
 script = ExtResource("1_nvi8u")
 attachment_name = "Flammen auf die Seite malen"
 description = "Coole Airbrush-Flammen die auf die Seite der Waffe gemalt wurden. Macht mehr Schaden, ist aber auch lauter."
-spread_mult = 0.7
-volume_mult = 0.4
-range_mult = 0.85
-weight_mult = 0.85
+slot_type = "body"
+damage_mult = 1.15
+volume_mult = 1.15
 metadata/_custom_type_script = "uid://b5kr8i0klb5ie"
