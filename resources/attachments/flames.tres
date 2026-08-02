@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponAttachment" format=3 uid="uid://mvmyx6gvajtc"]
+
+[ext_resource type="Script" uid="uid://b5kr8i0klb5ie" path="res://scripts/weapon_attachment.gd" id="1_nvi8u"]
+
+[resource]
+script = ExtResource("1_nvi8u")
+attachment_name = "Flammen auf die Seite malen"
+description = "Coole Airbrush-Flammen die auf die Seite der Waffe gemalt wurden. Macht mehr Schaden, ist aber auch lauter."
+spread_mult = 0.7
+volume_mult = 0.4
+range_mult = 0.85
+weight_mult = 0.85
+metadata/_custom_type_script = "uid://b5kr8i0klb5ie"

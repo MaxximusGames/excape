@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponAttachment" format=3 uid="uid://c4emvcbdr6nmg"]
+
+[ext_resource type="Script" uid="uid://b5kr8i0klb5ie" path="res://scripts/weapon_attachment.gd" id="1_s3nkh"]
+
+[resource]
+script = ExtResource("1_s3nkh")
+spread_mult = 0.7
+volume_mult = 0.4
+range_mult = 0.85
+weight_mult = 1.15
+metadata/_custom_type_script = "uid://b5kr8i0klb5ie"

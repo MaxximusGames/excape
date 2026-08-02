@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	var input_direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var weight_multiplier = 1.0
 	if GameState.equipped_weapon:
-		weight_multiplier = 1.0 / GameState.equipped_weapon.weight
+		weight_multiplier = 1.0 / GameState.equipped_weapon.get_effective_weight()
 	velocity = input_direction * speed * weight_multiplier
 	move_and_slide()
 
@@ -38,8 +38,6 @@ func _process(delta: float) -> void:
 
 func shoot() -> void:
 	if not GameState.equipped_weapon or is_reloading:
-		return
-	if not GameState.equipped_weapon:
 		return
 
 	var weapon = GameState.equipped_weapon
@@ -57,16 +55,16 @@ func shoot() -> void:
 	bullet.global_position = global_position
 
 	var base_direction = (get_global_mouse_position() - global_position).normalized()
-	var spread_radians = deg_to_rad(weapon.spread)
+	var spread_radians = deg_to_rad(weapon.get_effective_spread())
 	var random_angle_offset = randf_range(-spread_radians / 2.0, spread_radians / 2.0)
 	bullet.direction = base_direction.rotated(random_angle_offset)
-	bullet.damage = weapon.damage
-	bullet.speed = weapon.bullet_speed
-	bullet.max_range = weapon.range
+	bullet.damage = weapon.get_effective_damage()
+	bullet.speed = weapon.get_effective_bullet_speed()
+	bullet.max_range = weapon.get_effective_range()
 
-	GameState.make_noise(global_position, weapon.volume)
+	GameState.make_noise(global_position, weapon.get_effective_volume())
 
-	await get_tree().create_timer(weapon.fire_rate).timeout
+	await get_tree().create_timer(weapon.get_effective_fire_rate()).timeout
 	can_shoot = true
 
 func reload() -> void:

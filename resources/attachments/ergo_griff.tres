@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponAttachment" format=3 uid="uid://b0durhedxev0q"]
+
+[ext_resource type="Script" uid="uid://b5kr8i0klb5ie" path="res://scripts/weapon_attachment.gd" id="1_2i2hi"]
+
+[resource]
+script = ExtResource("1_2i2hi")
+attachment_name = "Ergonomischer Griff"
+description = "Liegt so gut in der Hand, dass man denkt, die Waffe wäre leichter. und präziser macht es auch noch!"
+slot_type = "body"
+spread_mult = 0.85
+weight_mult = 0.9
+metadata/_custom_type_script = "uid://b5kr8i0klb5ie"

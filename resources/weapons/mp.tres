@@ -13,4 +13,7 @@ volume = 800.0
 range = 900.0
 weight = 0.9
 price_cash = 100
+magazine_size = 25
+starting_reserve_ammo = 50
+reload_time = 2.0
 metadata/_custom_type_script = "uid://bdm5qh4y8tv5n"

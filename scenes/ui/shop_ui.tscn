@@ -9,8 +9,8 @@ script = ExtResource("1_ygcrn")
 [node name="Panel" type="Panel" parent="." unique_id=247014847]
 offset_left = 50.0
 offset_top = 100.0
-offset_right = 450.0
-offset_bottom = 400.0
+offset_right = 650.0
+offset_bottom = 600.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1047817935]
 layout_mode = 0

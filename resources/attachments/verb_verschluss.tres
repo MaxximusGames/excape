@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponAttachment" format=3 uid="uid://blhbsciuai46v"]
+
+[ext_resource type="Script" uid="uid://b5kr8i0klb5ie" path="res://scripts/weapon_attachment.gd" id="1_qjmir"]
+
+[resource]
+script = ExtResource("1_qjmir")
+attachment_name = "Verbesserter Verschluss"
+description = "Er ist halt verbessert. Besser als der alte halt. was soll ich sagen? schneller, fester, lauter!"
+slot_type = "bolt"
+damage_mult = 1.2
+bullet_speed_mult = 1.1
+volume_mult = 1.6
+metadata/_custom_type_script = "uid://b5kr8i0klb5ie"
