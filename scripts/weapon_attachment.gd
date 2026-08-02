@@ -3,7 +3,7 @@ class_name WeaponAttachment
 
 @export var attachment_name: String = "Attachment Name"
 @export_multiline var description: String = "Beschreibung"
-@export var slot_type: String = "barrel"  # "barrel", "bolt", "body"
+@export var slot_type: String = "barrel, bolt, body"
 @export var allowed_weapon_types: Array[String] = []  # leer = alle Waffentypen erlaubt
 @export var price_scrap: int = 50
 

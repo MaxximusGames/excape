@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponAttachment" format=3 uid="uid://c63wwglfofltw"]
+
+[ext_resource type="Script" uid="uid://b5kr8i0klb5ie" path="res://scripts/weapon_attachment.gd" id="1_slvxe"]
+
+[resource]
+script = ExtResource("1_slvxe")
+attachment_name = "mega kurzer Lauf"
+description = "Ein extra kurzer lauf, wie in deiner Hose. Macht leichter, aber auch weniger präzise. Beschleunigt das Geschoss etwas."
+slot_type = "barrel"
+allowed_weapon_types = Array[String](["rifle", "mg"])
+bullet_speed_mult = 1.1
+spread_mult = 1.4
+weight_mult = 0.8
+metadata/_custom_type_script = "uid://b5kr8i0klb5ie"

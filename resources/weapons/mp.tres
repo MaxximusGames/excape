@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_cavq1")
 weapon_name = "MP5"
+weapon_type = "mp"
 bullet_scene = ExtResource("1_jo37v")
 fire_rate = 0.1
 spread = 20.0

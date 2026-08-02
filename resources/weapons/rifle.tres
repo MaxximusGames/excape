@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_cme0y")
 weapon_name = "Sniper"
+weapon_type = "rifle"
 bullet_scene = ExtResource("1_fwyd3")
 fire_rate = 1.0
 damage = 50.0

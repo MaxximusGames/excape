@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("2_e4ulk")
 weapon_name = "MG42"
+weapon_type = "mg"
 bullet_scene = ExtResource("1_7uohj")
 fire_rate = 0.1
 damage = 20.0

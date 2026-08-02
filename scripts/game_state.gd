@@ -1,8 +1,8 @@
 extends Node
 signal noise_made(position: Vector2, volume: float)
 
-var banked_scrap: int = 0
-var banked_cash: int = 1500
+var banked_scrap: int = 1500
+var banked_cash: int = 2500
 
 var run_scrap: int = 0
 var run_loot: Array = []
@@ -13,15 +13,39 @@ var ammo_state: Dictionary = {}
 var player_health: float = 100.0
 var max_player_health: float = 100.0
 
+var owned_attachments: Array[WeaponAttachment] = []
 var owned_weapons: Array[WeaponData] = []
 var equipped_weapon: WeaponData = null
 var ui_open: bool = false
 
 var last_run_summary: Dictionary = {}
 
+func load_all_weapons() -> Array[WeaponData]:
+	var result: Array[WeaponData] = []
+	var dir = DirAccess.open("res://resources/weapons/")
+	if not dir:
+		push_error("Waffen-Ordner nicht gefunden")
+		return result
+
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if file_name.ends_with(".tres"):
+			var resource = load("res://resources/weapons/" + file_name)
+			if resource is WeaponData:
+				result.append(resource)
+		file_name = dir.get_next()
+	dir.list_dir_end()
+
+	return result
+
 func _ready() -> void:
-	owned_weapons.append(preload("res://resources/weapons/pistol.tres"))
-	equipped_weapon = owned_weapons[0]
+	var all_weapons = load_all_weapons()
+	for weapon in all_weapons:
+		if weapon.free_starting_ammo:
+			owned_weapons.append(weapon)
+			equipped_weapon = weapon
+			break
 
 func add_item(item_name: String, value: int) -> void:
 	run_loot.append({"name": item_name, "value": value})
@@ -72,6 +96,33 @@ func buy_weapon(weapon: WeaponData) -> bool:
 		owned_weapons.append(weapon)
 		return true
 	return false
+	
+func buy_attachment(attachment: WeaponAttachment) -> bool:
+	if banked_scrap >= attachment.price_scrap and not owned_attachments.has(attachment):
+		banked_scrap -= attachment.price_scrap
+		owned_attachments.append(attachment)
+		return true
+	return false
+
+func equip_attachment(weapon: WeaponData, attachment: WeaponAttachment) -> void:
+	if not owned_attachments.has(attachment):
+		return
+	match attachment.slot_type:
+		"barrel":
+			weapon.equipped_barrel = attachment
+		"bolt":
+			weapon.equipped_bolt = attachment
+		"body":
+			weapon.equipped_body = attachment
+
+func unequip_attachment(weapon: WeaponData, slot_type: String) -> void:
+	match slot_type:
+		"barrel":
+			weapon.equipped_barrel = null
+		"bolt":
+			weapon.equipped_bolt = null
+		"body":
+			weapon.equipped_body = null
 
 func on_run_success(cash_bonus: int) -> void:
 	last_run_summary = {

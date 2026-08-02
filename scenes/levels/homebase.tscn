@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://2wr407a03atj" path="res://scenes/levels/waffenshop.gd" id="3_flrac"]
 [ext_resource type="PackedScene" uid="uid://c6bhihlmnm2jl" path="res://scenes/ui/homebase_hud.tscn" id="4_2kw0q"]
 [ext_resource type="PackedScene" uid="uid://dimhrgar6diqq" path="res://scenes/ui/shop_ui.tscn" id="4_f2uwu"]
+[ext_resource type="Script" uid="uid://dl2f250ankigc" path="res://scenes/levels/werkbank.gd" id="7_a302s"]
+[ext_resource type="PackedScene" uid="uid://b0k6qlvak5ryo" path="res://scenes/ui/workbench_ui.tscn" id="8_2gv8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b40lw"]
 texture = ExtResource("1_pgqma")
@@ -80,6 +82,27 @@ offset_bottom = -34.0
 text = "Shop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="waffenshop" unique_id=374817495]
+position = Vector2(2, -10)
+scale = Vector2(1, 1.96)
+shape = SubResource("RectangleShape2D_slopk")
+
+[node name="werkbank" type="Area2D" parent="." unique_id=268456195]
+position = Vector2(235, 98)
+collision_layer = 64
+script = ExtResource("7_a302s")
+workbench_ui_scene = ExtResource("8_2gv8k")
+
+[node name="Tile01" type="Sprite2D" parent="werkbank" unique_id=205583303]
+texture = ExtResource("2_80s0l")
+
+[node name="Label" type="Label" parent="werkbank/Tile01" unique_id=352481108]
+offset_left = -39.0
+offset_top = -58.0
+offset_right = 78.0
+offset_bottom = -35.0
+text = "Werkbank"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="werkbank" unique_id=1897465734]
 position = Vector2(2, -10)
 scale = Vector2(1, 1.96)
 shape = SubResource("RectangleShape2D_slopk")

@@ -5,12 +5,8 @@ extends CanvasLayer
 var available_weapons: Array[WeaponData] = []
 
 func _ready() -> void:
-	available_weapons = [
-		preload("res://resources/weapons/pistol.tres"),
-		preload("res://resources/weapons/rifle.tres"),
-		preload("res://resources/weapons/mg.tres"),
-		preload("res://resources/weapons/mp.tres"),
-	]
+	available_weapons = GameState.load_all_weapons()
+	available_weapons.sort_custom(func(a, b): return a.price_cash < b.price_cash)
 
 func _process(delta: float) -> void:
 	if visible and Input.is_action_just_pressed("ui_cancel"):

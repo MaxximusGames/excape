@@ -29,9 +29,11 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="ReloadBarContainer" type="Node2D" parent="." unique_id=1293239566]
+visible = false
 top_level = true
 
 [node name="ProgressBar" type="ProgressBar" parent="ReloadBarContainer" unique_id=1217447375]
+visible = false
 offset_left = -20.0
 offset_top = -40.0
 offset_right = 20.0

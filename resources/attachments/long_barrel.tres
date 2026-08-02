@@ -6,6 +6,7 @@
 script = ExtResource("1_210oe")
 attachment_name = "Suuuuuper langer Lauf"
 description = "Ein extra langer lauf, wie in meiner Hose. Macht schwerer, aber auch präziser. Verlangsamt das Geschoss etwas."
+slot_type = "barrel"
 allowed_weapon_types = Array[String](["rifle", "mg"])
 bullet_speed_mult = 0.9
 spread_mult = 0.6
