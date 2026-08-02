@@ -6,6 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_x7p2l"]
 radius = 9.848858
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmlin"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvxji"]
+bg_color = Color(0.99323857, 0.019779857, 0.019779857, 1)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1529227868 groups=["player"]]
 z_index = 10
 collision_mask = 10
@@ -22,3 +27,15 @@ shape = SubResource("CircleShape2D_x7p2l")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=94708218]
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
+
+[node name="ReloadBarContainer" type="Node2D" parent="." unique_id=1293239566]
+top_level = true
+
+[node name="ProgressBar" type="ProgressBar" parent="ReloadBarContainer" unique_id=1217447375]
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+offset_bottom = -25.0
+theme_override_styles/background = SubResource("StyleBoxFlat_gmlin")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lvxji")
+show_percentage = false

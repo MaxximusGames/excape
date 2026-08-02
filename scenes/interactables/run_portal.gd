@@ -34,6 +34,7 @@ func _process(delta: float) -> void:
 func start_run() -> void:
 	GameState.reset_run_stats()
 	GameState.reset_health()
+	GameState.refill_starter_weapons()
 	get_tree().change_scene_to_file("res://scenes/levels/level_01.tscn")
 
 func _on_body_entered(body: Node2D) -> void:

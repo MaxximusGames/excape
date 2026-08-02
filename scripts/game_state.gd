@@ -8,12 +8,14 @@ var run_scrap: int = 0
 var run_loot: Array = []
 var run_kills: int = 0
 var run_damage_dealt: float = 0.0
+var ammo_state: Dictionary = {}
 
 var player_health: float = 100.0
 var max_player_health: float = 100.0
 
 var owned_weapons: Array[WeaponData] = []
 var equipped_weapon: WeaponData = null
+var ui_open: bool = false
 
 var last_run_summary: Dictionary = {}
 
@@ -33,6 +35,32 @@ func reset_run_stats() -> void:
 
 func on_run_failed() -> void:
 	reset_run_stats()
+
+func get_ammo_state(weapon: WeaponData) -> Dictionary:
+	if not ammo_state.has(weapon):
+		ammo_state[weapon] = {"in_mag": weapon.magazine_size, "reserve": weapon.starting_reserve_ammo}
+	return ammo_state[weapon]
+
+func reload_weapon(weapon: WeaponData) -> void:
+	var state = get_ammo_state(weapon)
+	var needed = weapon.magazine_size - state.in_mag
+	var available = min(needed, state.reserve)
+	state.in_mag += available
+	state.reserve -= available
+	
+func refill_starter_weapons() -> void:
+	for weapon in owned_weapons:
+		if weapon.free_starting_ammo:
+			ammo_state[weapon] = {"in_mag": weapon.magazine_size, "reserve": weapon.starting_reserve_ammo}
+
+func buy_ammo(weapon: WeaponData, amount: int) -> bool:
+	var total_cost = amount * weapon.ammo_price_cash
+	if banked_cash >= total_cost:
+		banked_cash -= total_cost
+		var state = get_ammo_state(weapon)
+		state.reserve += amount
+		return true
+	return false
 
 func equip_weapon(weapon: WeaponData) -> void:
 	if owned_weapons.has(weapon):

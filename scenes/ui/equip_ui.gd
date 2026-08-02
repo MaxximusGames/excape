@@ -13,10 +13,12 @@ func _process(delta: float) -> void:
 
 func open_shop() -> void:
 	visible = true
+	GameState.ui_open = true
 	refresh_list()
 
 func close_shop() -> void:
 	visible = false
+	GameState.ui_open = false
 
 func refresh_list() -> void:
 	for child in item_list_container.get_children():

@@ -22,9 +22,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 56.0
-offset_top = -54.0
+offset_top = -48.0
 offset_right = 256.0
-offset_bottom = -27.0
+offset_bottom = -21.0
 grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -40,13 +40,13 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 60.0
-offset_top = -51.0
-offset_right = 100.0
-offset_bottom = -28.0
+offset_top = -48.0
+offset_right = 160.0
+offset_bottom = -25.0
 grow_vertical = 0
 theme = SubResource("Theme_0mwgc")
 theme_override_colors/font_color = Color(0, 0.22889857, 0.7827901, 1)
-text = "100 / 100"
+text = "HP: 100 / 100"
 
 [node name="ScrapLabel" type="Label" parent="." unique_id=111331821]
 offset_left = 50.0
@@ -74,3 +74,31 @@ grow_horizontal = 2
 scale = Vector2(2, 2)
 size_flags_horizontal = 4
 text = "Zeit: 1000s"
+
+[node name="AmmoLabel" type="Label" parent="." unique_id=341242395]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -73.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "11 / 12"
+
+[node name="ReserveAmmoLabel" type="Label" parent="." unique_id=467402327]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -48.0
+offset_right = -62.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "24"

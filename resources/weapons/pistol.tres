@@ -6,4 +6,5 @@
 [resource]
 script = ExtResource("1_1vsk4")
 bullet_scene = ExtResource("1_uny8x")
+free_starting_ammo = true
 metadata/_custom_type_script = "uid://bdm5qh4y8tv5n"
