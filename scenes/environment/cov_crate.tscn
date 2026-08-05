@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slopk"]
 size = Vector2(28, 29)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_slopk"]
+polygon = PackedVector2Array(-15, -15, 14, -15, 14, 14, -15, 14)
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=511307950]
 collision_layer = 129
 collision_mask = 0
@@ -15,3 +18,6 @@ texture = ExtResource("1_pc7bb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1221100535]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_slopk")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1887186484]
+occluder = SubResource("OccluderPolygon2D_slopk")

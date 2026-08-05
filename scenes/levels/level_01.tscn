@@ -87,3 +87,6 @@ position = Vector2(156, 211)
 
 [node name="StaticBody2D7" parent="." unique_id=1383580762 instance=ExtResource("10_ijn0p")]
 position = Vector2(96, 230)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1029113120]
+color = Color(0.2716998, 0.2716998, 0.33183005, 1)

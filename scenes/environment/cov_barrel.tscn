@@ -5,6 +5,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_slopk"]
 radius = 12.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_slopk"]
+polygon = PackedVector2Array(0, -12, 5, -11, 8, -9, 11, -5, 12, 0, 11, 5, 8, 9, 4, 11, 0, 12, -5, 11, -9, 8, -11, 5, -12, 0, -11, -5, -9, -8, -5, -11)
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=511307950]
 collision_layer = 129
 collision_mask = 0
@@ -14,3 +17,6 @@ texture = ExtResource("1_palpi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1511820189]
 shape = SubResource("CircleShape2D_slopk")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=629022297]
+occluder = SubResource("OccluderPolygon2D_slopk")

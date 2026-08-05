@@ -11,6 +11,15 @@ radius = 9.848858
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvxji"]
 bg_color = Color(0.99323857, 0.019779857, 0.019779857, 1)
 
+[sub_resource type="Gradient" id="Gradient_4pips"]
+offsets = PackedFloat32Array(0, 0.57894737)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_slopk"]
+gradient = SubResource("Gradient_4pips")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1529227868 groups=["player"]]
 z_index = 10
 collision_mask = 138
@@ -41,3 +50,9 @@ offset_bottom = -25.0
 theme_override_styles/background = SubResource("StyleBoxFlat_gmlin")
 theme_override_styles/fill = SubResource("StyleBoxFlat_lvxji")
 show_percentage = false
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1971693985]
+energy = 0.59
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_slopk")
+texture_scale = 30.2
