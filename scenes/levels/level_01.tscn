@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cba1lncuxrj8e" path="res://scenes/interactables/extraction_zone.tscn" id="4_uvc87"]
 [ext_resource type="PackedScene" uid="uid://c58mw2slh77oj" path="res://scenes/ui/hud.tscn" id="5_qdh5e"]
 [ext_resource type="PackedScene" uid="uid://cybgecl4uvbei" path="res://scenes/enemies/enemy_spawn_point.tscn" id="7_1ey3t"]
+[ext_resource type="PackedScene" uid="uid://cehj0qhc682xv" path="res://scenes/environment/cov_tree_big.tscn" id="8_t0hvh"]
+[ext_resource type="PackedScene" uid="uid://6eknstpklgny" path="res://scenes/environment/cov_crate.tscn" id="9_r72dd"]
+[ext_resource type="PackedScene" uid="uid://djh0ukia0b2f3" path="res://scenes/environment/cov_barrel.tscn" id="10_ijn0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvc87"]
 texture = ExtResource("3_2djvx")
@@ -63,3 +66,24 @@ enemy_scene = ExtResource("1_i2aat")
 [node name="Node2D4" parent="." unique_id=303615602 instance=ExtResource("7_1ey3t")]
 position = Vector2(788, -192)
 enemy_scene = ExtResource("1_i2aat")
+
+[node name="StaticBody2D" parent="." unique_id=511307950 instance=ExtResource("8_t0hvh")]
+position = Vector2(-85, 202)
+
+[node name="StaticBody2D2" parent="." unique_id=2048232273 instance=ExtResource("8_t0hvh")]
+position = Vector2(353, 246)
+
+[node name="StaticBody2D3" parent="." unique_id=2049607705 instance=ExtResource("8_t0hvh")]
+position = Vector2(245, -101)
+
+[node name="StaticBody2D4" parent="." unique_id=555185444 instance=ExtResource("9_r72dd")]
+position = Vector2(142, 239)
+
+[node name="StaticBody2D5" parent="." unique_id=2046353547 instance=ExtResource("9_r72dd")]
+position = Vector2(170, 239)
+
+[node name="StaticBody2D6" parent="." unique_id=1877024406 instance=ExtResource("10_ijn0p")]
+position = Vector2(156, 211)
+
+[node name="StaticBody2D7" parent="." unique_id=1383580762 instance=ExtResource("10_ijn0p")]
+position = Vector2(96, 230)

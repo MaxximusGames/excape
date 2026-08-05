@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://egxv8llwu6bl"]
 
 [ext_resource type="Script" uid="uid://coxtqlby7hngb" path="res://scenes/projectiles/bullet.gd" id="1_yvfy2"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8e3ao"]
+[ext_resource type="Texture2D" uid="uid://b08gmn4bsaitl" path="res://assets/sprites/bulletDark1.png" id="2_48g2p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_slopk"]
 
@@ -23,8 +22,7 @@ collision_mask = 2
 script = ExtResource("1_yvfy2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1448047811]
-scale = Vector2(5, 5)
-texture = SubResource("PlaceholderTexture2D_8e3ao")
+texture = ExtResource("2_48g2p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=837288443]
 shape = SubResource("CircleShape2D_slopk")

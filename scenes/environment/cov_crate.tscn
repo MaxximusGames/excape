@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://6eknstpklgny"]
+
+[ext_resource type="Texture2D" uid="uid://bfp7flqficb5r" path="res://assets/sprites/misc/crateWood.png" id="1_pc7bb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slopk"]
+size = Vector2(28, 29)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=511307950]
+collision_layer = 129
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1831046818]
+texture = ExtResource("1_pc7bb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1221100535]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_slopk")

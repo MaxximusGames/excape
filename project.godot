@@ -75,6 +75,7 @@ reload={
 2d_physics/layer_5="pickup"
 2d_physics/layer_6="extraction_zone"
 2d_physics/layer_7="interactable"
+2d_physics/layer_8="obstacles"
 
 [physics]
 
