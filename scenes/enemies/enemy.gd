@@ -124,6 +124,11 @@ func take_damage(amount: float) -> void:
 	GameState.run_damage_dealt += amount
 	health_bar.visible = true
 	health_bar.value = (health / max_health) * 100
+
+	if player_ref:
+		awareness_timer = memory_duration
+		last_known_position = player_ref.global_position
+
 	if health <= 0:
 		GameState.run_kills += 1
 		drop_loot()
