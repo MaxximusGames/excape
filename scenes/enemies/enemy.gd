@@ -12,6 +12,7 @@ extends CharacterBody2D
 @export var wander_radius: float = 60.0
 @export var wander_interval: float = 3.0
 @export var wander_speed_factor: float = 0.4
+@export var fov_angle: float = 150.0
 
 var health: float
 var player_ref: Node2D = null
@@ -42,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	var distance_to_player := global_position.distance_to(player_ref.global_position)
-	can_see_player = distance_to_player <= detection_range and has_line_of_sight_to_player()
+	can_see_player = distance_to_player <= detection_range and is_player_in_fov() and has_line_of_sight_to_player()
 
 	if can_see_player:
 		awareness_timer = memory_duration
@@ -98,6 +99,12 @@ func has_line_of_sight_to_player() -> bool:
 	query.exclude = [self]
 	var result = space_state.intersect_ray(query)
 	return result.is_empty()
+	
+func is_player_in_fov() -> bool:
+	var direction_to_player = (player_ref.global_position - global_position).normalized()
+	var facing_direction = Vector2.RIGHT.rotated(rotation)
+	var angle_to_player = rad_to_deg(facing_direction.angle_to(direction_to_player))
+	return abs(angle_to_player) <= fov_angle / 2.0
 	
 func shoot() -> void:
 	can_shoot = false
