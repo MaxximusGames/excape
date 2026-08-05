@@ -41,7 +41,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not player_ref:
 		return
-
+	
+	visible = player_ref.can_see_point(global_position)
+	
 	var distance_to_player := global_position.distance_to(player_ref.global_position)
 	can_see_player = distance_to_player <= detection_range and is_player_in_fov() and has_line_of_sight_to_player()
 
@@ -74,6 +76,8 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 
 	move_and_slide()
+		
+
 func wander(delta: float) -> void:
 	wander_timer -= delta
 	if wander_timer <= 0:

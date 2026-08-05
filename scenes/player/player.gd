@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @export var speed: float = 200.0
+@export var vision_radius: float = 1500.0
+
 
 var is_reloading: bool = false
 var can_shoot: bool = true
@@ -66,6 +68,16 @@ func shoot() -> void:
 
 	await get_tree().create_timer(weapon.get_effective_fire_rate()).timeout
 	can_shoot = true
+
+func can_see_point(point: Vector2) -> bool:
+	if global_position.distance_to(point) > vision_radius:
+		return false
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, point)
+	query.collision_mask = 1 << 7  # obstacles
+	query.exclude = [self]
+	var result = space_state.intersect_ray(query)
+	return result.is_empty()
 
 func reload() -> void:
 	if not GameState.equipped_weapon or is_reloading:

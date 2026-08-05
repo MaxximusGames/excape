@@ -19,6 +19,10 @@ func _ready() -> void:
 	progress_bar.value = 0
 
 func _process(delta: float) -> void:
+	var player_node = get_tree().get_first_node_in_group("player")
+	if player_node:
+		visible = player_node.can_see_point(global_position)
+
 	if player_in_range:
 		prompt_label.visible = true
 		if Input.is_action_pressed("interact"):
