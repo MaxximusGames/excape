@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	var distance_to_player := global_position.distance_to(player_ref.global_position)
-	can_see_player = distance_to_player <= detection_range
+	can_see_player = distance_to_player <= detection_range and has_line_of_sight_to_player()
 
 	if can_see_player:
 		awareness_timer = memory_duration
@@ -91,6 +91,13 @@ func wander(delta: float) -> void:
 
 	move_and_slide()
 
+func has_line_of_sight_to_player() -> bool:
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(global_position, player_ref.global_position)
+	query.collision_mask = 1 << 7  # obstacles-Layer (Bit-Nummer anpassen)
+	query.exclude = [self]
+	var result = space_state.intersect_ray(query)
+	return result.is_empty()
 	
 func shoot() -> void:
 	can_shoot = false
